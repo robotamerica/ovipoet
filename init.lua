@@ -45,4 +45,20 @@ vim.api.nvim_call_function("codeium#GetStatusString", {})
 end
 --
 --
+-- Poetry hotkeys (Markdown + LaTeX)
+-- Insert Pandoc line block (| ) for poetry lineation
+vim.keymap.set("i", "<C-l>", "| ")
+
+-- Insert LaTeX stanza break
+vim.keymap.set("i", "<C-s>", "\\stanzabreak<CR>")
+
+-- Wrap selection in LaTeX verse environment
+vim.keymap.set("v", "<leader>pv", ":s/^/| /<CR>gv")  -- convert block to Pandoc line blocks
+vim.keymap.set("v", "<leader>vv", "<ESC>`<i\\\\begin{verse}<CR><ESC>`>o\\\\end{verse}<CR>")
+
+-- Insert poem title header
+vim.keymap.set("n", "<leader>pt", "O# Title<CR>| first line<ESC>")
+
+-- Quick build + open PDF (Mac only)
+vim.keymap.set("n", "<leader>pb", ":!cd ~/poetry-book && ./scripts/build.sh && open exports/book.pdf<CR>")
 
