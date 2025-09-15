@@ -10,6 +10,7 @@ I have adapted OviWrite for poets, creating 'ovipoet', an Integrated Poetry Envi
 - Run Pandoc with a custom Lua filter that converts line blocks into clean LaTeX verse environments. From there, Pandoc + LuaLaTeX build out exports/book.pdf, alongside HTML and EPUB versions
 - You can run ./scripts/build.sh once for a full build, or ./scripts/watch.sh for a live-rebuilding preview with Skim auto-reloading the PDF on macOS. This workflow keeps your Markdown clean while producing professional-quality typeset poetry books
 
+![ovipoet image](https://github.com/robotamerica/ovipoet/blob/main/assets/ovipoet%20-%20iTerm2.png)
 ---
 ## From OVIWrite:
 
@@ -19,8 +20,6 @@ I have adapted OviWrite for poets, creating 'ovipoet', an Integrated Poetry Envi
 - 🧹 Sane default settings and options for writers
 - 😻 Eye candy in the form of beautiful color schemes, in dark and light modes, including flavours of Catppuccin, Gruvbox, Nord, NightFox
 - 📦 Comes with a wealth of plugins for longform writing, interconnected note-taking (wikis, etc.), and screenwriting. All pre-configured and ready to use
-
-
 
 ## 🔎 OVI-WHAT-NOW? 
 
