@@ -1,31 +1,32 @@
-# Node.js
-node_modules/
-package-lock.json
-
-# Neovim
-lazy-lock.json
-
-# Spell check files
-spell/en.utf-8.add
-spell/en.utf-8.add.spl
-
-# Logs and temporary files
-*.log
-*.tmp
-
-# OS-specific files
+# OS junk
 .DS_Store
-Thumbs.db
 
-# Personal configuration files
-config/personal_settings.lua
+# Neovim temp
+*.swp
+*.swo
+*~
+*.bak
+*.orig
 
-# Compiled Lua files
-*.luac
+# Lazy/Mason/Treesitter runtime (user-local)
+.local/
+cache/
+state/
+share/
+site/
+pack/
+plugged/
 
-# Test files
-test.tex
+# Common build artifacts
+node_modules/
+dist/
+__pycache__/
+.venv/
 
-# Output files
-output.txt
-treeOutput.txt
+# Logs
+*.log
+
+# Don’t accidentally commit user content from external projects
+poetry-book/
+exports/
+build/

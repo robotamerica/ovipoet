@@ -6,30 +6,23 @@ return
   init = false,
   opts = function()
     local dashboard = require("alpha.themes.dashboard")
-    local logo = [[   
-
-                                                                                                                                         
-    ,o888888o.     `8.`888b           ,8'  8 8888 `8.`888b                 ,8' 8 888888888o.    8 8888 8888888 8888888888 8 8888888888   
- . 8888     `88.    `8.`888b         ,8'   8 8888  `8.`888b               ,8'  8 8888    `88.   8 8888       8 8888       8 8888         
-,8 8888       `8b    `8.`888b       ,8'    8 8888   `8.`888b             ,8'   8 8888     `88   8 8888       8 8888       8 8888         
-88 8888        `8b    `8.`888b     ,8'     8 8888    `8.`888b     .b    ,8'    8 8888     ,88   8 8888       8 8888       8 8888         
-88 8888         88     `8.`888b   ,8'      8 8888     `8.`888b    88b  ,8'     8 8888.   ,88'   8 8888       8 8888       8 888888888888 
-88 8888         88      `8.`888b ,8'       8 8888      `8.`888b .`888b,8'      8 888888888P'    8 8888       8 8888       8 8888         
-88 8888        ,8P       `8.`888b8'        8 8888       `8.`888b8.`8888'       8 8888`8b        8 8888       8 8888       8 8888         
-`8 8888       ,8P         `8.`888'         8 8888        `8.`888`8.`88'        8 8888 `8b.      8 8888       8 8888       8 8888         
- ` 8888     ,88'           `8.`8'          8 8888         `8.`8' `8,`'         8 8888   `8b.    8 8888       8 8888       8 8888         
-    `8888888P'              `8.`           8 8888          `8.`   `8'          8 8888     `88.  8 8888       8 8888       8 888888888888 
-                                                           
-                                                                     
+    local logo = [[
 
 
-					<An Integrated Writing Environment (IWE) built using NeoVim's Ecosystem>
-							<@theenaKumaraG, Miragian Studios>
+     ________  ___      ___ ___  ________  ________  _______  _________   
+    |\   __  \|\  \    /  /|\  \|\   __  \|\   __  \|\  ___ \|\___   ___\ 
+    \ \  \|\  \ \  \  /  / | \  \ \  \|\  \ \  \|\  \ \   __/\|___ \  \_| 
+     \ \  \\\  \ \  \/  / / \ \  \ \   ____\ \  \\\  \ \  \_|/__  \ \  \  
+      \ \  \\\  \ \    / /   \ \  \ \  \___|\ \  \\\  \ \  \_|\ \  \ \  \ 
+       \ \_______\ \__/ /     \ \__\ \__\    \ \_______\ \_______\  \ \__\
+        \|_______|\|__|/       \|__|\|__|     \|_______|\|_______|   \|__|
+
+
+
+      <An Integrated Poetry Environment (IPE) built using NeoVim's Ecosystem>
+             <@theenaKumaraG + adapted from oviwrite by robotamerica>
     ]]
     dashboard.section.header.val = vim.split(logo, "\n")
-
-
-
 
     -- stylua: ignore
     dashboard.section.buttons.val = {
@@ -38,6 +31,9 @@ return
       dashboard.button("r", " " .. " Recent files",    "<cmd> Telescope oldfiles <cr>"),
       dashboard.button("g", " " .. " Find text",       "<cmd> Telescope live_grep <cr>"),
       dashboard.button("l", "󰒲 " .. " Lazy",            "<cmd> Lazy <cr>"),
+      dashboard.button("gp", "  Pull (rebase)", ":lua os.execute('git pull --rebase')<CR>"),
+      dashboard.button("gP", "  Push",          ":lua os.execute('git push')<CR>"),
+      dashboard.button("gs", "󰜬  Sync",           ":lua os.execute('git pull --rebase && git push')<CR>"),
       dashboard.button("q", " " .. " Quit",            "<cmd> qa <cr>"),
     }
     for _, button in ipairs(dashboard.section.buttons.val) do
@@ -83,4 +79,3 @@ return
     })
   end,
 }
-
